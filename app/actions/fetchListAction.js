@@ -17,7 +17,6 @@ export function fetchList(channel) {
 
     return dispatch => {
         dispatch(fetchListInit());
-
         Util.fetchData(URL, 'get', (response) => {
             dispatch(fetchListInfo(response,channel));
         }, (error) => {

@@ -25,10 +25,9 @@ class V2ex extends Component {
     }
 
     render() {
-        const { ListInfo } = this.props;
         return (
             <View style={{ flex: 1 }}>
-                <InfoListView {...this.props} style={{ flex: 1 }} />
+                <InfoListView {...this.props} />
             </View>
         );
     }

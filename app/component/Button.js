@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: 'white',
-        fontSize: FONT_SIZE(16),
+        fontSize: 16,
     },
     icon: {
         marginRight: 10
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
         padding: 12
     },
     smallFont: {
-        fontSize: FONT_SIZE(14)
+        fontSize: 14
     },
     activityIndicatorStyle: {
         marginHorizontal: 10,

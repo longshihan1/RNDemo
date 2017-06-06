@@ -12,12 +12,16 @@ import {
     ListView,
     FlatList,
     Animated
-} from 'react-native'
+} from 'react-native';
+
+
 import {fetchList} from '../../actions/fetchListAction';
 import WebViewContainer from '../Detail/WebViewContainer';
 var {height, width} = Dimensions.get('window');
 
 export default class InfoListView extends Component {
+
+
     constructor(props) {
         super(props)
         this.onPressItem = this.onPressItem.bind(this);

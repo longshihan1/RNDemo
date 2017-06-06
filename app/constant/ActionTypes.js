@@ -24,3 +24,7 @@ export const RECEIVE_GANK_LIST = 'RECEIVE_GANK_LIST';
 
 export const FETCH_LIST_INIT = 'FETCH_LIST_INIT';
 export const FETCH_LIST_INFO = 'FETCH_LIST_INFO';
+
+//gank
+export const GET_GANK_SUCCESS='GET_GANK_SUCCESS';
+export const GET_GANK_FAILURE='GET_GANK_FAILURE';

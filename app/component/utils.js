@@ -19,6 +19,18 @@ let Util = {
             navigator.pop();
             return
         }
-    }
+    },
+    fetchGankWeb: (url, method, successCallback, failCallback) => {
+        fetch(url, {
+            method: method
+        })
+            .then((response) => response.json())
+            .then((responseJSON) => {
+                successCallback(responseJSON);
+            })
+            .catch((err) => {
+                failCallback(err);
+            });
+    },
 };
 export default Util
