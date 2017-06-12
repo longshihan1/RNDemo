@@ -11,12 +11,13 @@ import {
 } from 'react-native'
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import GankTab from '../Detail/GankTab'
-import { connect } from 'react-redux';
-import { fetchList } from '../../actions/fetchGankList';
+import GankListContainer from '../Detail/GankListContainer'
+import {connect} from 'react-redux';
+import {fetchList} from '../../actions/fetchGankList';
 let {height, width} = Dimensions.get('window');
 
 
- class Gank extends Component {
+export default class Gank extends Component {
     constructor(props) {
         super(props);
         const {navigate} = this.props.navigation;
@@ -32,13 +33,11 @@ let {height, width} = Dimensions.get('window');
     }
 
     _onChangeTab = (obj) => {
-        const { dispatch } = this.props;
-        dispatch(fetchList(this.state.typeArr[obj.i].type,'1'));
+
     };
 
     componentWillMount() {
-        const { dispatch } = this.props;
-        dispatch(fetchList('iOS','1'));
+
     }
 
     render() {
@@ -52,15 +51,16 @@ let {height, width} = Dimensions.get('window');
                 onChangeTab={(i) => this._onChangeTab(i)}
                 tabBarTextStyle={{fontSize: 15}}>
                 {
+
                     this.state.typeArr.map((item, i) => {
                         return (
-                            <GankTab key={i}
-                                     tabLabel={item.title}
-                                     type={item.type}
-                                     style={{backgroundColor: 'white', flex: 1}}
-                                     navigate={item.navigate}
-                                     {...this.props}
+                            <GankListContainer key={i}
+                                               tabLabel={item.title}
+                                               type={item.type}
+                                               style={{backgroundColor: 'white', flex: 1}}
+                                               navigate={item.navigate}
                             />
+
                         )
 
                     })
@@ -69,10 +69,3 @@ let {height, width} = Dimensions.get('window');
         );
     }
 }
-
-export default connect(state => {
-    const {GankInfo} = state;
-    return {
-        GankInfo
-    }
-})(Gank);

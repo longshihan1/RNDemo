@@ -1,10 +1,11 @@
-import {AppRegistry, View, Text} from 'react-native';
+import {AppRegistry, View, Text,PermissionsAndroid} from 'react-native';
 import React, {Component} from 'react';
 import {Provider}from 'react-redux';
 import configureStore from './store/ConfigureStore';
 const store = configureStore();
 import './component/Global'
 import App from './APP';
+import PermissionDemo from './component/PermissionDemo'
 
 
 /*
@@ -26,7 +27,9 @@ export default class Root extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLogin: false
+            isLogin: false,
+            permission: PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+            hasPermission: 'Not Checked',
         }
     }
 
@@ -48,6 +51,7 @@ export default class Root extends Component {
                 </View>
         );
     }
+
 }
 
 console.ignoredYellowBox = ['Warning: BackAndroid is deprecated.  Please use BackHandler instead.',
