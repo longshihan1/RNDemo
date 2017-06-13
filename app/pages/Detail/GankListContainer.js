@@ -2,7 +2,11 @@
  * Created by Rabbit on 2017/4/27.
  */
 
+<<<<<<< HEAD
 import React, {Component} from 'react';
+=======
+import React, { Component } from 'react';
+>>>>>>> origin/master
 import {
     AppRegistry,
     StyleSheet,
